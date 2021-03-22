@@ -8,7 +8,7 @@ const DEFAULT_STATE = {
 };
 
 function InputColor() {
-    const [text, settext] = React.useState("");
+    const [text, settext] = React.useState("#");
     const [state, setstate] = React.useState("");
 
     function hex2rgb(c) {
@@ -33,7 +33,7 @@ function InputColor() {
     
     return (
         <div style={{ backgroundColor: `${state.name || DEFAULT_STATE.bacgroundColor}`, height: '100vh', width: '100vw', display: "flex", flexDirection: "column", justifyContent: 'center', alignItems: "center" }}>
-            <input style ={{display: "block", margin: '0 auto'}} value={text.text} onChange={onChange} type="text" />
+            <input style ={{display: "block", margin: '0 auto'}} value={text} onChange={onChange} type="text" />
             <input style={{ backgroundColor: `${state.colorName || DEFAULT_STATE.bacgroundColor}`, color: state.colorName ? "white" : "black" }} value={state.name || state.err || DEFAULT_STATE.name} readOnly/>
         </div>
     );
